@@ -1,0 +1,394 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root{
+    --mainColor:  #264d73
+    /* --secondColor:  */
+}
+
+.user-page-header{
+    width: 100%;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--mainColor); 
+    color: white;
+    position: fixed;
+    z-index: 1;
+}
+
+.container-with-flex-alignment{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80%;
+}
+
+.burger-and-logo{
+    width: 20%;
+    height: 100%;
+    display: flex;
+}
+
+.burger-button{
+    padding: 10px;
+    color: white;
+    background-color: var(--mainColor);
+    border: none;
+    width: 15%;
+}
+
+.website-logo{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.website-logo > img {
+    /* display: block; */
+    width: 90%;
+    height: 80%;
+}
+
+.search-bar{
+    width:50%;
+    height: 90%; 
+    display: flex;
+    align-items: center;
+    border-radius: 13px;
+    padding-left: 20px;
+    background-color: white;
+}
+
+.search-bar > i {
+    margin-right: 3%;
+    color: gray;
+}
+.search-bar > input {
+    outline: none;
+    border: none;
+    height: 100%;
+    width: 90%;
+}
+
+.user-and-notifications{
+    display: flex;
+}
+
+.user-icon{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    padding: 3px;
+    background-color: white;
+    margin-left: auto;
+}
+
+@media  (max-width:576px) {
+    .search-bar{
+        width: 40%;
+    }
+    .search-bar > input{
+        width: 70%;
+    }
+    .burger-and-logo{
+        width: 40%;
+    }
+    
+}
+
+@media (min-width:576px) and (max-width:768px) {
+    .search-bar{
+        width: 40%;
+    }
+    .search-bar > input{
+        width: 80%;
+    }
+    
+}
+
+
+
+#list{
+    width: 15%;
+    background-color: var(--mainColor);
+    height: 95vh; 
+    position: fixed;
+    margin-top: 55px;
+    transform: translateX(-100%);
+    z-index: 3;
+    
+}
+
+.overlay{
+    width: 85%;
+    height: 95vh;
+    position: fixed;
+    opacity: 0.8;
+    background-color: gray;
+    margin-top: 55px;
+    right: 0; 
+    display: none;
+    z-index: 2;
+    transition: 1s ease all;
+}
+@media  (max-width:576px) {
+    #list{
+        width: 48%;
+    }
+    
+}
+
+@media (min-width:576px) and (max-width:768px) {
+    #list{
+        width: 35%;
+    }
+    
+}
+
+@media (min-width:768px) and (max-width:992px) {
+    #list{
+        width: 25%;
+    }
+    
+}
+
+@media (min-width:992px) and (max-width:1200px) {
+    #list{
+        width: 20%;
+    }
+    
+}
+
+.navigator{
+    width: 100%;
+    height: 90px; 
+    display: flex;
+    align-items: center;
+    color: white;
+    position: relative;
+    cursor: pointer;
+}
+
+
+.nav-icon{
+    height:30%;
+    width: 30%;
+    text-align: right;
+
+}
+
+.nav-icon > i{
+    font-size: 13px;
+}
+
+.nav-title> h5{
+    font-size: 15px;
+}
+
+.nav-title{
+    height: 30%;
+    width: 80%;
+    padding-left: 10px;
+    padding-top: 5px;
+    
+}
+
+.main-container{
+    width: 80%;
+    margin: auto;
+    height: 100vh;
+}
+
+.page{
+    padding-top: 50px; 
+}
+
+.course-item{
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.card-overlay{
+    width: 100%;
+    height: 100%;
+    background: rgb(47,155,157);
+    background: linear-gradient(0deg, rgba(47,155,157,0.8128501400560224) 0%, rgba(0,0,0,0.08175770308123254) 100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right:0; 
+    overflow: hidden;
+
+}
+
+.course-item > img{
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    transition: 0.5s all ease;
+    
+}
+
+.course-info{
+    position: absolute;
+    right: 3%;
+    bottom: 2%;
+    font-weight: bolder;
+    transition: 0.5s all ease;
+    color: black;
+    z-index: 1;
+    text-align: right;
+}
+
+.course-info > h4{
+    font-size: 20px;
+}
+
+.add-course{
+    position: absolute;
+    display: block;
+    width: 40%;
+    margin: auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    background-color: var(--mainColor);
+    color: white;
+    transition: 0.8s all ease;
+    opacity: 0;    
+    left: 30%;
+    z-index: 3;
+}
+
+.course-item:hover .course-info{
+    transform: translateY(-70%);
+    transition: 0.5s all ease;
+}
+
+.course-item:hover .add-course {
+    transform: translateY(-120%);
+    transition: 0.8s all ease;
+    opacity: 1;
+}
+
+.course-item:hover #course-img {
+    transform: scale(1.3); 
+    transition: 0.5s all ease;
+}
+
+.open-link {
+    text-decoration: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 4px;
+    background-color: var(--mainColor
+    );
+    border-radius: 20px;
+    color: white;
+    display: block;
+    width: 40%;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+a:hover{
+    color: white;
+}
+
+.announce{
+    height: 400px; 
+    box-shadow: 1px 0px 33px 6px rgb(230, 230, 230); 
+    padding: 10px;
+}
+
+.announce-header{
+    height: 70px;
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+    padding-top: 5px;
+
+}
+
+.announce-content{
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: justify;
+}
+
+.w-45{
+    width: 45%;
+}
+
+.w-20{
+    width: 20%;
+}
+
+#announce-body-table{
+    vertical-align: middle;
+}
+
+.notifications{
+    position: absolute;
+    width: 30%;
+    overflow-y: scroll;
+    height: 500px; 
+    background-color: white;
+    top: 7.5%; 
+    right: 1%;
+    border-radius: 5px;
+    border: 1px solid black;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    display: none;
+    z-index: 2;
+}
+
+@media  (max-width:576px) {
+    .notifications{
+        width: 98%;
+        top: 9%;
+    }
+    
+}
+
+@media (min-width:576px) and (max-width:768px) {
+    #list{
+        width: 35%;
+    }
+    
+}
+
+@media (min-width:768px) and (max-width:992px) {
+    #list{
+        width: 25%;
+    }
+    
+}
+
+@media (min-width:992px) and (max-width:1200px) {
+    #list{
+        width: 20%;
+    }
+    
+}
